@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "target": "es6",
+    "strict": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUncheckedIndexedAccess": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsxImportSource": "@emotion/react",
+    "allowJs": true,
+    "noEmit": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "src/",
+    "types": ["node", "jest", "@testing-library/jest-dom", "@emotion/react/types/css-prop"],
+    "paths": {
+      "@components/*": ["components/*"],
+      "@constants/*": ["constants/*"],
+      "@constants": ["constants/index"],
+      "@contexts/*": ["contexts/*"],
+      "@pages/*": ["pages/*"],
+      "@shared/*": ["components/shared/*"],
+      "@utils/*": ["utils/*"],
+      "@utils": ["utils/index"],
+      "~/*": ["*"]
+    },
+    "strictPropertyInitialization": false,
+    "useUnknownInCatchVariables": false,
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["**/*.spec.ts", "**/*.test.ts", "node_modules/"]
+}
