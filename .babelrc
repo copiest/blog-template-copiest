@@ -1,14 +1,9 @@
 {
-    "presets": [
-        "@babel/preset-env",
-        "@emotion/babel-preset-css-prop",
-        "@babel/preset-typescript",
-        [
-            "@babel/preset-react",
-            { "runtime": "automatic", "importSource": "@emotion/react" }
-        ]
-    ],
-    "plugins": [
-        "@emotion/babel-plugin"
-    ]
+  "presets": [
+    "next/babel",
+    "@babel/preset-env",
+    "@babel/preset-typescript",
+    ["@babel/preset-react", { "runtime": "automatic" }]
+  ],
+  "plugins": ["@vanilla-extract/babel-plugin"]
 }

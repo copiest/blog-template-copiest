@@ -1,14 +1,13 @@
-import styled from '@emotion/styled'
 import Message from '@shared/Message'
+
+import { className } from '@components/shared/styles.css'
 
 function IndexPage() {
   return (
-    <Container>
+    <div className={className}>
       <Message />
-    </Container>
+    </div>
   )
 }
-
-const Container = styled.div``
 
 export default IndexPage
