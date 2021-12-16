@@ -14,7 +14,6 @@
     "noUnusedLocals": true,
     "noUncheckedIndexedAccess": true,
     "lib": ["dom", "dom.iterable", "esnext"],
-    "jsxImportSource": "@emotion/react",
     "allowJs": true,
     "noEmit": true,
     "module": "esnext",
@@ -22,7 +21,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "src/",
-    "types": ["node", "jest", "@testing-library/jest-dom", "@emotion/react/types/css-prop"],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "paths": {
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
