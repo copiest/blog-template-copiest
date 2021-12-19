@@ -9,16 +9,13 @@ export default PostDetail
 
 export const getStaticPaths = async () => {
   const allPosts = getAllPosts()
+  const paths: Array<{ params: { year: string; slugs: string[] } }> = []
 
-  const paths: Array<{ params: { year: string; slugs: string[] } }> = allPosts.reduce<
-    Array<{ params: { year: string; slugs: string[] } }>
-  >((prev, post) => {
+  for (const post of allPosts) {
     const { year, subject, title } = post.slug
 
-    prev.push({ params: { year, slugs: [subject, title] } })
-
-    return prev
-  }, [])
+    paths.push({ params: { year, slugs: [subject, title] } })
+  }
 
   return {
     paths,
