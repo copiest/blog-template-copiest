@@ -19,8 +19,8 @@ function IndexPage(props: any) {
 
 export default IndexPage
 
-export const getStaticProps: GetStaticProps = () => {
-  const posts = getAllPosts()
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await getAllPosts()
 
   return {
     props: {
