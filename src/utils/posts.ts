@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 
 import glob from 'glob'
-import matter from 'gray-matter'
 import memoize from 'memoizee'
 import { bundleMDX } from 'mdx-bundler'
 
@@ -10,17 +9,21 @@ import { Post, Slug } from '#types/post'
 
 const POST_DIRECTORY = path.join(process.cwd(), 'posts')
 
-function retreiveAllPosts(): Post[] {
+async function retreiveAllPosts(): Promise<Post[]> {
   const files: string[] = glob.sync(`${POST_DIRECTORY}/**/**/*.mdx`)
   const publishedPosts: Post[] = []
 
-  files.forEach((file) => {
-    const source = fs.readFileSync(path.join(file))
-    const slugs = file
+  for await (const f of files) {
+    const source = await fs.promises.readFile(f, { encoding: 'utf-8' })
+    const slugs = f
       .replace(`${POST_DIRECTORY}/`, '')
       .replace(/\.mdx?$/, '')
       .split('/')
-    const { data, content } = matter(source)
+    const {
+      matter: { data, content },
+    } = await bundleMDX({
+      source,
+    })
 
     if (data.published) {
       publishedPosts.push({
@@ -38,10 +41,10 @@ function retreiveAllPosts(): Post[] {
           subject: slugs[1],
           title: slugs[2],
         } as Slug,
-        path: file,
+        path: f,
       })
     }
-  })
+  }
 
   return publishedPosts.sort((a, b) => {
     if (a.frontMatter.date < b.frontMatter.date) {
@@ -52,7 +55,7 @@ function retreiveAllPosts(): Post[] {
   })
 }
 
-export const getAllPosts: () => Post[] = memoize(retreiveAllPosts)
+export const getAllPosts: () => Promise<Post[]> = memoize(retreiveAllPosts)
 
 export async function getPost(slug: Slug): Promise<{ post: Post; code: string }> {
   const { year, subject, title } = slug

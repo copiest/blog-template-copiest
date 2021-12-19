@@ -8,7 +8,7 @@ function PostDetail({ post, code }: { post: Post; code: string }) {
 export default PostDetail
 
 export const getStaticPaths = async () => {
-  const allPosts = getAllPosts()
+  const allPosts = await getAllPosts()
   const paths: Array<{ params: { year: string; slugs: string[] } }> = []
 
   for (const post of allPosts) {
