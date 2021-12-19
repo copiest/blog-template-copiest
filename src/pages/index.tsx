@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
 
-import { getAllPosts } from '@utils/posts'
+import { getAllPosts } from '#utils/posts'
 
-import { className } from '@components/shared/styles.css'
+import { className } from '#components/shared/styles.css'
 
 function IndexPage(props: any) {
   return (
