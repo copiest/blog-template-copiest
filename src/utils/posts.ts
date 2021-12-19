@@ -1,41 +1,24 @@
 import fs from 'fs'
 import path from 'path'
+
 import glob from 'glob'
 import matter from 'gray-matter'
 import memoize from 'memoizee'
+import { bundleMDX } from 'mdx-bundler'
+
+import { Post, Slug } from '@common/types'
 
 const POST_DIRECTORY = path.join(process.cwd(), 'posts')
 
-interface Slug {
-  year: string
-  subject: string
-  title: string
-}
-
-interface FrontMatter {
-  title: string
-  tags: string[]
-  published: boolean
-  date: string
-  thumbnailImg?: string
-  content: string
-}
-
-interface Post {
-  frontMatter: FrontMatter
-  slug: Slug
-  path: string
-}
-
 function retreiveAllPosts(): Post[] {
-  const files: string[] = glob.sync(`${POST_DIRECTORY}/**/**/*.md`)
+  const files: string[] = glob.sync(`${POST_DIRECTORY}/**/**/*.mdx`)
   const publishedPosts: Post[] = []
 
   files.forEach((file) => {
     const source = fs.readFileSync(path.join(file))
     const slugs = file
       .replace(`${POST_DIRECTORY}/`, '')
-      .replace(/\.md?$/, '')
+      .replace(/\.mdx?$/, '')
       .split('/')
     const { data, content } = matter(source)
 
@@ -46,6 +29,7 @@ function retreiveAllPosts(): Post[] {
           tags: data.tags,
           published: data.published,
           date: data.date,
+          description: data.description,
           thumbnailImg: data.thumbnailImg,
           content,
         },
@@ -68,4 +52,36 @@ function retreiveAllPosts(): Post[] {
   })
 }
 
-export const getAllPosts = memoize(retreiveAllPosts)
+export const getAllPosts: () => Post[] = memoize(retreiveAllPosts)
+
+export async function getPost(slug: Slug): Promise<{ post: Post; code: string }> {
+  const { year, subject, title } = slug
+  const POST_PATH = `${POST_DIRECTORY}/${year}/${subject}/${title}`
+
+  const source = fs.readFileSync(path.join(`${POST_PATH}.mdx`), { encoding: 'utf-8' })
+
+  const {
+    matter: { data, content },
+    code,
+  } = await bundleMDX({
+    source,
+    cwd: POST_PATH,
+  })
+
+  return {
+    post: {
+      frontMatter: {
+        title: data.title,
+        tags: data.tags,
+        published: data.published,
+        date: data.date,
+        description: data.description,
+        thumbnailImg: data.thumbnailImg,
+        content,
+      },
+      slug,
+      path: POST_PATH,
+    },
+    code,
+  }
+}
