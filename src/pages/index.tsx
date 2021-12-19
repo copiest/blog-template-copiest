@@ -7,7 +7,6 @@ import Message from '@shared/Message'
 import { className } from '@components/shared/styles.css'
 
 function IndexPage(props: any) {
-  console.log('posts', props)
   return (
     <div className={className}>
       <Message />
