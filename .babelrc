@@ -1,9 +1,4 @@
 {
-  "presets": [
-    "next/babel",
-    "@babel/preset-env",
-    "@babel/preset-typescript",
-    ["@babel/preset-react", { "runtime": "automatic" }]
-  ],
-  "plugins": ["@vanilla-extract/babel-plugin", "@babel/plugin-transform-runtime"]
+  "presets": ["next/babel"],
+  "plugins": ["@vanilla-extract/babel-plugin"]
 }
