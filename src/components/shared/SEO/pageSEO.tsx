@@ -19,7 +19,7 @@ export default function PageSEO({ title, url }: { title: string; url: string }) 
       <meta property="og:type" content="website" />
       <meta property="og:type" content="blog" />
       <meta property="og:url" content={url} />
-      <link rel="canonical" href={window.location.href} />
+      <link rel="canonical" href={url} />
     </Head>
   )
 }
