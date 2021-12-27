@@ -16,6 +16,7 @@ export default function DefaultSEO() {
       <meta property="og:image" content={config.thumbnail} />
       <meta property="og:type" content="website" />
       {typeof window !== 'undefined' && <meta property="og:url" content={window.location.href} />}
+      <link rel="canonical" href="https://tigger.dev" />
     </Head>
   )
 }

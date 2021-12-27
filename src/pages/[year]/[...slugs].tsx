@@ -1,15 +1,17 @@
 import React from 'react'
 import { getMDXExport } from 'mdx-bundler/client'
 
-import { Post, Slug } from '#types/post'
+import PostSEO from '#components/shared/SEO/postSEO'
+import { Post, PostSeo, Slug } from '#types/post'
 import { getAllPosts, getPost } from '#utils/posts'
 
 function PostDetail({ post, code }: { post: Post; code: string }) {
-  const mdxExport = React.useMemo(() => getMDXExport<{ meta: any }, {}>(code), [code])
+  const mdxExport = React.useMemo(() => getMDXExport<{ seo: PostSeo }, {}>(code), [code])
   const Component = React.useMemo(() => mdxExport.default, [code])
 
   return (
     <>
+      <PostSEO seo={mdxExport.seo} />
       <div>{post.frontMatter.title}</div>
       <Component />
     </>

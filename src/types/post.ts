@@ -19,3 +19,9 @@ export interface Post {
   slug: Slug
   path: string
 }
+
+export interface PostSeo {
+  title: string
+  description: string
+  tags: string[]
+}
