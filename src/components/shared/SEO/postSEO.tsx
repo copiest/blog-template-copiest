@@ -1,11 +1,12 @@
 import Head from 'next/head'
 
 import { PostSeo } from '#types/post'
+import config from 'config'
 
 export default function PostSEO({ seo }: { seo: PostSeo }) {
   return (
     <Head>
-      <title>{seo.title}</title>
+      <title>{`${seo.title} – ${config.title}`}</title>
       <meta name="title" content={seo.title} />
       <meta name="subject" content={seo.title} />
       <meta name="keywords" content={seo.title} />
