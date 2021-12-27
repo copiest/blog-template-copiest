@@ -3,7 +3,7 @@ export default {
   title: 'fronttigger',
   subtitle: 'fronttigger',
   description: "fronttigger's blog",
-  thumbnail: '',
+  thumbnail: '/tigger.jpeg',
   author: {
     name: 'fronttigger',
     thumbnail: '/tigger.jpeg',
