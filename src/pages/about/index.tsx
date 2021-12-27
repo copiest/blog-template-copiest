@@ -1,10 +1,9 @@
-import PageSEO from '#components/shared/SEO/pageSEO'
-import config from 'config'
+import PageSEO from '#components/shared/SEO/PageSEO'
 
 function About() {
   return (
     <>
-      <PageSEO title="About" description={config.subtitle} url={config.url} />
+      <PageSEO title="About" url="https://tigger.dev/about" />
       <div>About</div>
     </>
   )

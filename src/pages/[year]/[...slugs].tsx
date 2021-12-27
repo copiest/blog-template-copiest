@@ -1,7 +1,7 @@
 import React from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 
-import PostSEO from '#components/shared/SEO/postSEO'
+import PostSEO from '#components/shared/SEO/PostSEO'
 import { Post, Slug } from '#types/post'
 import { getAllPosts, getPost } from '#utils/posts'
 
