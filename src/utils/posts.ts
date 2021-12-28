@@ -8,7 +8,6 @@ import { bundleMDX } from 'mdx-bundler'
 import { Post, Slug } from '#types/post'
 
 const POST_DIRECTORY = path.join(process.cwd(), 'posts')
-const COMPONENTS_DIRECTORY = path.join(process.cwd(), 'src/components/shared/MDX')
 
 async function retreiveAllPosts(): Promise<Post[]> {
   const files: string[] = glob.sync(`${POST_DIRECTORY}/**/**/*.mdx`)
@@ -24,7 +23,7 @@ async function retreiveAllPosts(): Promise<Post[]> {
       matter: { data, content },
     } = await bundleMDX({
       source,
-      cwd: COMPONENTS_DIRECTORY,
+      cwd: process.cwd(),
     })
 
     if (data.published) {
@@ -70,7 +69,7 @@ export async function getPost(slug: Slug): Promise<{ post: Post; code: string }>
     code,
   } = await bundleMDX({
     source,
-    cwd: COMPONENTS_DIRECTORY,
+    cwd: process.cwd(),
   })
 
   return {
