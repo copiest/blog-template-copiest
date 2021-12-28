@@ -2,6 +2,7 @@ import React from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 
 import PostSEO from '#components/shared/SEO/PostSEO'
+import MDXComponents from '#components/shared/MDX'
 import { Post, Slug } from '#types/post'
 import { getAllPosts, getPost } from '#utils/posts'
 
@@ -19,7 +20,7 @@ function PostDetail({ post, code }: { post: Post; code: string }) {
         }}
       />
       <div>{title}</div>
-      <Component />
+      <Component components={MDXComponents} />
     </>
   )
 }
