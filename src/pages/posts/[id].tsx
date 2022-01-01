@@ -1,10 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 
 import { Post } from '#types/post'
-import { getAllPosts } from '#utils/posts'
+import { getAllPosts, getPagingInfo } from '#utils/posts'
 import { DEFAULT_POSTS_PAGE_SIZE } from '#constants'
 
 function PostsPage({ posts }: { posts: Post[] }) {
+  console.log('posts', posts)
   return <div>Posts</div>
 }
 
@@ -25,12 +26,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
+interface Params extends NodeJS.Dict<string> {
+  id: string
+}
+
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const posts = await getAllPosts()
+  const { id } = params as Params
+  const allPosts = await getAllPosts()
+  const page = Number(id)
+
+  const { startPost, endPost, hasNextPage } = getPagingInfo(page, allPosts.length)
 
   return {
     props: {
-      posts,
+      posts: allPosts.slice(startPost, endPost),
+      page,
+      hasNextPage,
     },
   }
 }
