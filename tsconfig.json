@@ -30,6 +30,7 @@
       "#pages/*": ["pages/*"],
       "#shared/*": ["components/shared/*"],
       "#types/*": ["types/*"],
+      "#store/*": ["store/*"],
       "#utils/*": ["utils/*"],
       "#utils": ["utils/index"],
       "~/*": ["*"]
