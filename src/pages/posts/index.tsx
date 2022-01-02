@@ -1,32 +1,32 @@
-import { useState, useMemo } from 'react'
+import { useEffect } from 'react'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import { InView } from 'react-intersection-observer'
+import { useSetRecoilState, useRecoilValue } from 'recoil'
 
+import { hasNextPostsPageState, allPostsState, pageState, currentPostsState } from '#store/posts'
 import { Post } from '#types/post'
 import { getAllPosts } from '#utils/posts'
-import { DEFAULT_POSTS_PAGE_SIZE } from '#constants'
 
-function PostsPage({ posts }: { posts: Post[] }) {
-  const [page, setPage] = useState<number>(1)
+function PostsPage({ allPosts }: { allPosts: Post[] }) {
+  const setPosts = useSetRecoilState(allPostsState)
+  const setPage = useSetRecoilState(pageState)
+  const currentPosts = useRecoilValue(currentPostsState)
+  const hasNextPostsPage = useRecoilValue(hasNextPostsPageState)
 
-  const postsSize = useMemo(() => page * DEFAULT_POSTS_PAGE_SIZE, [page])
-  const hasNextPage = useMemo(
-    () => Math.ceil(posts.length / DEFAULT_POSTS_PAGE_SIZE) !== page,
-    [page],
-  )
-
-  const handleChangeInview = (inView: boolean, index: number) => {
-    if (inView && hasNextPage && index === postsSize - 1) {
+  const handleChangeInview = (inView: boolean, index: number): void => {
+    if (inView && index === currentPosts.length - 1 && hasNextPostsPage) {
       setPage((page) => page + 1)
     }
   }
 
+  useEffect((): void => setPosts(allPosts), [])
+
   return (
     <>
-      {posts.slice(0, postsSize).map((post, index) => (
+      {currentPosts.map((post, index) => (
         <InView onChange={(InView) => handleChangeInview(InView, index)} key={index}>
-          <div style={{ height: 300 }}>
+          <div style={{ height: 200 }}>
             <Link href={`/${post.slug.year}/${post.slug.subject}/${post.slug.title}`}>
               {post.frontMatter.title}
             </Link>
@@ -40,11 +40,11 @@ function PostsPage({ posts }: { posts: Post[] }) {
 export default PostsPage
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts()
+  const allPosts = await getAllPosts()
 
   return {
     props: {
-      posts,
+      allPosts,
     },
   }
 }
