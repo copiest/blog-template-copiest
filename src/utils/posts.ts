@@ -6,7 +6,6 @@ import memoize from 'memoizee'
 import { bundleMDX } from 'mdx-bundler'
 
 import { Post, Slug } from '#types/post'
-import { DEFAULT_POSTS_PAGE_SIZE } from '#constants'
 
 const POST_DIRECTORY = path.join(process.cwd(), 'posts')
 
@@ -88,24 +87,5 @@ export async function getPost(slug: Slug): Promise<{ post: Post; code: string }>
       path: POST_PATH,
     },
     code,
-  }
-}
-
-export function getPagingInfo(
-  page: number,
-  totalPostLength: number,
-): {
-  startPost: number
-  endPost: number
-  hasNextPage: boolean
-} {
-  const startPost = (page - 1) * DEFAULT_POSTS_PAGE_SIZE
-  const endPost = startPost + DEFAULT_POSTS_PAGE_SIZE
-  const hasNextPage = Math.ceil(totalPostLength / DEFAULT_POSTS_PAGE_SIZE) > page
-
-  return {
-    startPost,
-    endPost,
-    hasNextPage,
   }
 }
