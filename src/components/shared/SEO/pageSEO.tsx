@@ -6,7 +6,6 @@ export default function PageSEO({ title, url }: { title: string; url: string }) 
   return (
     <Head>
       <title>{`${title} – ${config.title}`}</title>
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="title" content={title} />
       <meta name="subject" content={config.title} />
       <meta name="description" content={config.description} />
