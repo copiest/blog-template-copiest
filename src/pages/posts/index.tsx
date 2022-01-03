@@ -15,7 +15,7 @@ function PostsPage({ allPosts }: { allPosts: Post[] }) {
   const hasNextPostsPage = useRecoilValue(hasNextPostsPageState)
 
   const handleChangeInview = (inView: boolean, index: number): void => {
-    if (inView && index === currentPosts.length - 1 && hasNextPostsPage) {
+    if (inView && index === currentPosts.length - 3 && hasNextPostsPage) {
       setPage((page) => page + 1)
     }
   }
