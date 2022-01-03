@@ -1,7 +1,40 @@
 {
   "extends": ["@copiest/eslint-config-copiest/react"],
   "rules": {
-    "@typescript-eslint/no-use-before-define": "off"
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["external", "builtin", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "#/**",
+            "group": "parent",
+            "position": "before"
+          }
+        ],
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "env": {
+    "jest": true
   },
   "plugins": ["jest"]
 }

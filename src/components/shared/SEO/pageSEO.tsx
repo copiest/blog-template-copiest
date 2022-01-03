@@ -1,5 +1,4 @@
 import Head from 'next/head'
-
 import config from 'config'
 
 export default function PageSEO({ title, url }: { title: string; url: string }) {
