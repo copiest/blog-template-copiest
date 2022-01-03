@@ -1,12 +1,11 @@
-import Link from 'next/link'
 import { GetStaticProps } from 'next'
+import Link from 'next/link'
+import config from 'config'
 
 import PageSEO from '#components/shared/SEO/PageSEO'
 import { className } from '#components/shared/styles.css'
 import { Post } from '#types/post'
 import { getAllPosts } from '#utils/posts'
-
-import config from 'config'
 
 function IndexPage({ posts }: { posts: Post[] }) {
   return (
