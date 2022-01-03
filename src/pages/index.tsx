@@ -13,7 +13,7 @@ function IndexPage({ posts }: { posts: Post[] }) {
     <>
       <PageSEO title="Home" url={config.url} />
       <div className={className}>
-        {posts.map((post, index: number) => (
+        {posts.map((post, index) => (
           <Link href={`/${post.slug.year}/${post.slug.subject}/${post.slug.title}`} key={index}>
             {post.frontMatter.title}
           </Link>
