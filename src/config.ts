@@ -24,4 +24,16 @@ export default {
       soundcloud: '',
     },
   },
+  menus: [
+    {
+      id: 1,
+      menu: 'posts',
+      link: '/posts',
+    },
+    {
+      id: 2,
+      menu: 'about',
+      link: '/about',
+    },
+  ],
 }

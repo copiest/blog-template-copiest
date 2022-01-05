@@ -5,6 +5,7 @@ import { useRouter } from 'next/dist/client/router'
 import { RecoilRoot } from 'recoil'
 
 import '#shared/globalStyles.css.ts'
+import Header from '#components/header'
 
 function App({ Component, pageProps }: AppProps) {
   const Router = useRouter()
@@ -48,6 +49,7 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
+      <Header />
       <Component {...pageProps} />
     </RecoilRoot>
   )
