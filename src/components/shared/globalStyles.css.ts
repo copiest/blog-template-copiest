@@ -21,10 +21,14 @@ globalStyle('body', {
 })
 globalStyle('ol, ul', { listStyle: 'none' })
 globalStyle('q', { quotes: 'none' })
-globalStyle(' blockquote:before, blockquote:after, q:before, q:after', {
+globalStyle('blockquote:before, blockquote:after, q:before, q:after', {
   content: '',
 })
 globalStyle('table', {
   borderCollapse: 'collapse',
   borderSpacing: 0,
+})
+globalStyle('a:active, a:link, a:visited', {
+  textDecoration: 'none',
+  color: '#000',
 })

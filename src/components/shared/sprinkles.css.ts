@@ -3,9 +3,9 @@ import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles'
 import { theme } from './theme.css'
 
 const breakPoint = {
-  mobile: { '@media': 'screen and (min-width: 375px)' },
-  tablet: { '@media': 'screen and (min-width: 768px)' },
-  desktop: { '@media': 'screen and (min-width: 1024px)' },
+  mobile: { '@media': 'screen and (max-width: 375px)' },
+  tablet: { '@media': 'screen and (max-width: 768px)' },
+  desktop: { '@media': 'screen and (max-width: 1024px)' },
 }
 
 const responsiveProperties = defineProperties({
