@@ -4,6 +4,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/dist/client/router'
 import { RecoilRoot } from 'recoil'
 
+import '#shared/globalStyles.css.ts'
+
 function App({ Component, pageProps }: AppProps) {
   const Router = useRouter()
 
