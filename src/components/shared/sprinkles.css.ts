@@ -37,7 +37,6 @@ const responsiveProperties = defineProperties({
     fontSize: {
       ...theme.fontSize,
     },
-    maxWidth: theme.deviceWidth,
   },
   shorthands: {
     margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],
