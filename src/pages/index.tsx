@@ -3,20 +3,26 @@ import Link from 'next/link'
 import config from 'config'
 
 import PageSEO from '#components/shared/SEO/PageSEO'
+import Card from '#components/card'
 import { Post } from '#types/post'
 import { getAllPosts } from '#utils/posts'
+import { DEFAULT_POSTS_SIZE } from '#constants'
 
 function IndexPage({ posts }: { posts: Post[] }) {
   return (
     <>
       <PageSEO title="Home" url={config.url} />
-      <div>
-        {posts.map((post, index) => (
-          <Link href={`/${post.slug.year}/${post.slug.subject}/${post.slug.title}`} key={index}>
-            {post.frontMatter.title}
-          </Link>
+      <ul>
+        {posts.map(({ frontMatter, slug }, index) => (
+          <li key={index}>
+            <Link href={`/${slug.year}/${slug.subject}/${slug.title}`}>
+              <a>
+                <Card frontMatter={frontMatter} />
+              </a>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </>
   )
 }
@@ -28,7 +34,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      posts,
+      posts: posts.slice(0, DEFAULT_POSTS_SIZE),
     },
   }
 }

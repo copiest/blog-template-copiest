@@ -1,7 +1,7 @@
 import { atom, selector } from 'recoil'
 
 import { Post } from '#types/post'
-import { DEFAULT_POSTS_PAGE_SIZE } from '#constants'
+import { DEFAULT_POSTS_SIZE } from '#constants'
 
 const PAGE = 'page'
 const ALL_POSTS = 'allPosts'
@@ -21,7 +21,7 @@ export const allPostsState = atom<Post[]>({
 export const currentPostsState = selector<Post[]>({
   key: CURRENT_POSTS,
   get: ({ get }) => {
-    const currentPostsSize = get(pageState) * DEFAULT_POSTS_PAGE_SIZE
+    const currentPostsSize = get(pageState) * DEFAULT_POSTS_SIZE
     const posts = get(allPostsState)
 
     return posts.slice(0, currentPostsSize)
@@ -34,6 +34,6 @@ export const hasNextPostsPageState = selector<boolean>({
     const allPostsTotalLength = get(allPostsState).length
     const page = get(pageState)
 
-    return Math.ceil(allPostsTotalLength / DEFAULT_POSTS_PAGE_SIZE) !== page
+    return Math.ceil(allPostsTotalLength / DEFAULT_POSTS_SIZE) !== page
   },
 })
