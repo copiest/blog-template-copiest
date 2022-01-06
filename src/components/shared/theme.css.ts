@@ -1,11 +1,6 @@
 import { createGlobalTheme } from '@vanilla-extract/css'
 
 export const theme = createGlobalTheme(':root', {
-  deviceWidth: {
-    desktop: '1024px',
-    tablet: '768px',
-    mobile: '375px',
-  },
   color: {
     white: '#fff',
     black: '#000',
