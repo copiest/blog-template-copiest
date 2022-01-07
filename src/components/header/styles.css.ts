@@ -24,9 +24,9 @@ export const container = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%',
-  maxWidth: `calc(100% - ${theme.space.xxlarge})`,
   height: '100%',
   margin: 'auto',
+  padding: '0 24px',
 })
 
 export const logoContainer = style({
