@@ -4,6 +4,7 @@ export const theme = createGlobalTheme(':root', {
   color: {
     white: '#fff',
     black: '#000',
+    gray: '#8b95a1',
   },
   space: {
     none: '0',
@@ -28,6 +29,7 @@ export const theme = createGlobalTheme(':root', {
   },
   font: {
     header: 'Bebas Neue, cursive',
+    cardTitle: 'Do Hyeon, sans-serif',
   },
   borderColor: {
     grayOpacity: 'rgba(0,27,55,0.1)',

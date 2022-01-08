@@ -2,10 +2,16 @@ import { defineProperties, createSprinkles } from '@vanilla-extract/sprinkles'
 
 import { theme } from './theme.css'
 
+export const mediaQuery = {
+  mobile: 'screen and (max-width: 375px)',
+  tablet: 'screen and (min-width: 376px)',
+  desktop: 'screen and (min-width: 769px)',
+}
+
 const breakPoint = {
-  mobile: { '@media': 'screen and (max-width: 375px)' },
-  tablet: { '@media': 'screen and (max-width: 768px)' },
-  desktop: { '@media': 'screen and (max-width: 1024px)' },
+  mobile: { '@media': mediaQuery.mobile },
+  tablet: { '@media': mediaQuery.tablet },
+  desktop: { '@media': mediaQuery.desktop },
 }
 
 const responsiveProperties = defineProperties({

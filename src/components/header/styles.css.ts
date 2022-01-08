@@ -23,9 +23,7 @@ export const container = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  width: '100%',
   height: '100%',
-  margin: 'auto',
   padding: '0 24px',
 })
 

@@ -2,6 +2,8 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import config from 'config'
 
+import { cardContainer } from './style.css'
+
 import PageSEO from '#components/shared/SEO/PageSEO'
 import Card from '#components/card'
 import { Post } from '#types/post'
@@ -14,7 +16,7 @@ function IndexPage({ posts }: { posts: Post[] }) {
       <PageSEO title="Home" url={config.url} />
       <ul>
         {posts.map(({ frontMatter, slug }, index) => (
-          <li key={index}>
+          <li key={index} className={cardContainer}>
             <Link href={`/${slug.year}/${slug.subject}/${slug.title}`}>
               <a>
                 <Card frontMatter={frontMatter} />

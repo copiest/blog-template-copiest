@@ -17,12 +17,14 @@ export default function Card({ frontMatter }: { frontMatter: FrontMatter }) {
   return (
     <article className={container}>
       <div className={imageContainer}>
-        <Image src={thumbnailImg || ''} width="192px" height="144px" />
+        <Image src={thumbnailImg || ''} width="120px" height="120px" />
       </div>
       <div className={textContainer}>
         <h3 className={titleText}>{postTitle}</h3>
-        <span className={descriptionText}>{description}</span>
-        <span className={dateText}>{date}</span>
+        <div>
+          <p className={descriptionText}>{description}</p>
+          <span className={dateText}>{date}</span>
+        </div>
       </div>
     </article>
   )
