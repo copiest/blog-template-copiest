@@ -1,12 +1,16 @@
 import { style } from '@vanilla-extract/css'
 
-export const layoutWrapper = style({
-  maxWidth: '720px',
-  margin: 'auto',
-})
+import { sprinkles } from '#components/shared/sprinkles.css'
 
-export const container = style({
-  width: '100%',
-  padding: '0 24px',
-  margin: 'auto',
-})
+export const container = style([
+  sprinkles({
+    paddingX: {
+      mobile: 'xlarge',
+      tablet: 'xlarge',
+    },
+  }),
+  {
+    maxWidth: '720px',
+    margin: 'auto',
+  },
+])

@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css'
 import { theme } from '#shared/theme.css'
 import { sprinkles } from '#components/shared/sprinkles.css'
 
-export const navbar = style({
+export const header = style({
   position: 'sticky',
   top: 0,
   left: 0,
@@ -12,7 +12,7 @@ export const navbar = style({
   borderBottom: `1px solid ${theme.borderColor.grayOpacity}`,
 })
 
-export const wrapper = style({
+export const navbar = style({
   width: '100%',
   maxWidth: '840px',
   height: '100%',
