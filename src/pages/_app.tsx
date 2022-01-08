@@ -6,6 +6,7 @@ import { RecoilRoot } from 'recoil'
 
 import '#shared/globalStyles.css.ts'
 import Header from '#components/header'
+import Layout from '#components/layout'
 
 function App({ Component, pageProps }: AppProps) {
   const Router = useRouter()
@@ -50,7 +51,9 @@ function App({ Component, pageProps }: AppProps) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <Header />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </RecoilRoot>
   )
 }
