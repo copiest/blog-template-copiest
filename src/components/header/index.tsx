@@ -3,8 +3,8 @@ import Link from 'next/link'
 import config from 'config'
 
 import {
+  header,
   navbar,
-  wrapper,
   container,
   logoContainer,
   imageContainer,
@@ -15,8 +15,8 @@ import {
 
 export default function Header() {
   return (
-    <nav className={navbar}>
-      <section className={wrapper}>
+    <header className={header}>
+      <nav className={navbar}>
         <div className={container}>
           <Link href="/">
             <div className={logoContainer}>
@@ -34,7 +34,7 @@ export default function Header() {
             ))}
           </ul>
         </div>
-      </section>
-    </nav>
+      </nav>
+    </header>
   )
 }
