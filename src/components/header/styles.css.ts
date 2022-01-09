@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css'
 
 import { theme } from '#shared/theme.css'
 import { sprinkles } from '#components/shared/sprinkles.css'
+import { MAX_Z_INDEX } from '#constants'
 
 export const header = style({
   position: 'sticky',
@@ -10,6 +11,7 @@ export const header = style({
   height: '60px',
   backgroundColor: `${theme.color.white}`,
   borderBottom: `1px solid ${theme.borderColor.grayOpacity}`,
+  zIndex: MAX_Z_INDEX,
 })
 
 export const navbar = style({
