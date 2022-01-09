@@ -27,6 +27,13 @@ export const theme = createGlobalTheme(':root', {
     medium: '1.5px',
     small: '1px',
   },
+  borderRadius: {
+    none: '0',
+    small: '4px',
+    medium: '8px',
+    large: '16px',
+    circle: '50%',
+  },
   font: {
     header: 'Bebas Neue, cursive',
     cardTitle: 'Do Hyeon, sans-serif',

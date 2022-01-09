@@ -9,7 +9,6 @@
         "aspects": ["invalidHref", "preferButton"]
       }
     ],
-    "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "import/order": [
       "error",

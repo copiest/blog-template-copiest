@@ -20,7 +20,7 @@ function PostsPage({ allPosts }: { allPosts: Post[] }) {
     }
   }
 
-  useEffect((): void => setPosts(allPosts), [])
+  useEffect((): void => setPosts(allPosts), [allPosts, setPosts])
 
   return (
     <>

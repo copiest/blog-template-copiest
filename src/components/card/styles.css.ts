@@ -15,7 +15,7 @@ export const imageContainer = style([
     },
   }),
   {
-    minWidth: '120px',
+    minWidth: '160px',
     height: '120px',
     marginRight: theme.space.xlarge,
   },
@@ -60,7 +60,7 @@ export const descriptionText = style([
       mobile: 'medium',
     },
   }),
-  { lineHeight: 'normal' },
+  { lineHeight: 'normal', color: theme.color.gray },
   oneLineEllipsis,
 ])
 
@@ -74,7 +74,7 @@ export const dateText = style([
   }),
   {
     display: 'block',
-    marginTop: theme.space.large,
+    marginTop: '7px',
     color: theme.color.gray,
   },
 ])
