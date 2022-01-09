@@ -6,6 +6,7 @@ export const codeText = style({
   padding: theme.space.small,
   color: theme.color.pink,
   fontSize: theme.fontSize.small,
+  fontWeight: theme.fontWeight.semiBold,
   borderRadius: theme.borderRadius.small,
   backgroundColor: theme.color.lightgray,
 })
