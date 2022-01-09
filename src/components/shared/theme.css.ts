@@ -4,7 +4,9 @@ export const theme = createGlobalTheme(':root', {
   color: {
     white: '#fff',
     black: '#000',
+    lightgray: '#f3f4f6',
     gray: '#8b95a1',
+    pink: '#c586c0',
   },
   space: {
     none: '0',
@@ -17,10 +19,17 @@ export const theme = createGlobalTheme(':root', {
   },
   fontSize: {
     tiny: '12px',
-    small: '15px',
+    small: '14px',
+    xsmall: '16px',
     medium: '18px',
     large: '24px',
     xlarge: '32px',
+  },
+  fontWeight: {
+    normal: '400',
+    medium: '500',
+    semiBold: '600',
+    bold: '700',
   },
   letterSpacing: {
     large: '2px',
