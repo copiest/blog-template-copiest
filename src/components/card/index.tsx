@@ -17,7 +17,7 @@ export default function Card({ frontMatter }: { frontMatter: FrontMatter }) {
   return (
     <article className={container}>
       <div className={imageContainer}>
-        <Image src={thumbnailImg || ''} width="160px" height="120px" />
+        <Image src={thumbnailImg || ''} width="160px" height="130px" />
       </div>
       <div className={textContainer}>
         <h3 className={titleText}>{postTitle}</h3>
