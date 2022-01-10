@@ -16,7 +16,7 @@ export const header = style({
 
 export const navbar = style({
   width: '100%',
-  maxWidth: '840px',
+  maxWidth: '960px',
   height: '100%',
   margin: 'auto',
 })

@@ -7,6 +7,7 @@ export const container = style([
     paddingX: {
       mobile: 'xlarge',
       tablet: 'xlarge',
+      desktop: 'none',
     },
   }),
   {

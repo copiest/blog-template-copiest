@@ -12,5 +12,5 @@ export const codeText = style({
 })
 
 export const syntaxHighlighter = {
-  borderRadius: theme.borderRadius.medium,
+  borderRadius: theme.borderRadius.small,
 }
