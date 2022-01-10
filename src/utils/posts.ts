@@ -1,9 +1,8 @@
+import path from 'path'
+import fs from 'fs'
 import glob from 'glob'
 import memoize from 'memoizee'
 import { bundleMDX } from 'mdx-bundler'
-
-import path from 'path'
-import fs from 'fs'
 
 import { Post, Slug } from '#types/post'
 

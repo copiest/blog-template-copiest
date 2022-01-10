@@ -4,4 +4,5 @@ import { theme } from '#components/shared/theme.css'
 
 export const strongText = style({
   fontWeight: theme.fontWeight.bold,
+  color: theme.color.darkblue,
 })

@@ -6,9 +6,11 @@ export const theme = createGlobalTheme(':root', {
     black: '#000',
     lightgray: '#f3f4f6',
     darkgray: '#636e72',
+    bluegray: '#4e5968',
     gray: '#8b95a1',
     pink: '#c586c0',
-    lightBlue: '#54a0ff',
+    lightblue: '#54a0ff',
+    darkblue: '#434c58',
   },
   space: {
     none: '0',

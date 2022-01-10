@@ -60,7 +60,7 @@ export const descriptionText = style([
       mobile: 'medium',
     },
   }),
-  { lineHeight: 'normal', color: theme.color.gray },
+  { lineHeight: 'normal', color: theme.color.darkblue },
   oneLineEllipsis,
 ])
 
