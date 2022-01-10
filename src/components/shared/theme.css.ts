@@ -20,6 +20,7 @@ export const theme = createGlobalTheme(':root', {
     xlarge: '24px',
     xxlarge: '32px',
     xxxlarge: '48px',
+    huge: '96px',
   },
   fontSize: {
     tiny: '12px',
@@ -28,6 +29,7 @@ export const theme = createGlobalTheme(':root', {
     medium: '18px',
     large: '24px',
     xlarge: '32px',
+    xxlarge: '48px',
   },
   fontWeight: {
     normal: '400',

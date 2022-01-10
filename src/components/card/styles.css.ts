@@ -16,7 +16,7 @@ export const imageContainer = style([
   }),
   {
     minWidth: '160px',
-    height: '120px',
+    height: '130px',
     marginRight: theme.space.xlarge,
   },
 ])
@@ -43,13 +43,13 @@ export const titleText = style([
       mobile: 'none',
     },
     marginBottom: {
-      desktop: 'medium',
-      tablet: 'none',
+      desktop: 'large',
+      tablet: 'large',
       mobile: 'none',
     },
   }),
   {
-    fontFamily: theme.font.cardTitle,
+    fontWeight: theme.fontWeight.bold,
   },
   twoLineEllipsis,
 ])
@@ -57,6 +57,8 @@ export const titleText = style([
 export const descriptionText = style([
   sprinkles({
     marginTop: {
+      desktop: 'none',
+      tablet: 'none',
       mobile: 'medium',
     },
   }),
@@ -71,10 +73,15 @@ export const dateText = style([
       tablet: 'medium',
       mobile: 'none',
     },
+    marginTop: {
+      desktop: 'large',
+      tablet: 'large',
+      mobile: 'large',
+    },
   }),
   {
     display: 'block',
-    marginTop: '7px',
+
     color: theme.color.gray,
   },
 ])

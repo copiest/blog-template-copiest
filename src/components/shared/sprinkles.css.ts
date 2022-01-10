@@ -40,9 +40,7 @@ const responsiveProperties = defineProperties({
     paddingBottom: theme.space,
     paddingLeft: theme.space,
     paddingRight: theme.space,
-    fontSize: {
-      ...theme.fontSize,
-    },
+    fontSize: theme.fontSize,
   },
   shorthands: {
     margin: ['marginTop', 'marginBottom', 'marginLeft', 'marginRight'],

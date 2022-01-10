@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import config from 'config'
 
-import { cardContainer } from './style.css'
+import { cardContainer } from './styles.css'
 
 import PageSEO from '#components/shared/SEO/PageSEO'
 import Card from '#components/card'
