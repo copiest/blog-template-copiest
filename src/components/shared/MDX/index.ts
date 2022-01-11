@@ -5,6 +5,7 @@ import Strong from './Strong'
 import Anchor from './Anchor'
 import Ol from './List/Ol'
 import Ul from './List/Ul'
+import BlockQuote from './BlockQuote'
 import { H1, H2, H3, H4 } from './Text'
 
 export default {
@@ -13,6 +14,7 @@ export default {
   img: Image,
   strong: Strong,
   a: Anchor,
+  blockquote: BlockQuote,
   h1: H1,
   h2: H2,
   h3: H3,
