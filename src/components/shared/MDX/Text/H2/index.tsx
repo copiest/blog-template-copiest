@@ -1,9 +1,9 @@
-import { strongText } from './styles.css'
+import { h2 } from './styles.css'
 
 const H2 = ({
   children,
 }: React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>) => {
-  return <h2 className={strongText}>{children}</h2>
+  return <h2 className={h2}>{children}</h2>
 }
 
 export default H2
