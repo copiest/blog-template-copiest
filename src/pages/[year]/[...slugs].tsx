@@ -22,7 +22,7 @@ function PostDetail({ post, code }: { post: Post; code: string }) {
         }}
       />
       <section className={styles.container}>
-        <h2 className={styles.title}>{title}</h2>
+        <h1 className={styles.title}>{title}</h1>
         <span className={styles.date}>{date}</span>
         <Component components={MDXComponents} />
       </section>

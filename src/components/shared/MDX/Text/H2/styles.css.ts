@@ -2,7 +2,8 @@ import { style } from '@vanilla-extract/css'
 
 import { theme } from '#components/shared/theme.css'
 
-export const strongText = style({
-  fontWeight: theme.fontWeight.bold,
-  color: theme.color.darkblue,
+export const h2 = style({
+  margin: `${theme.space.xxxlarge} 0 ${theme.space.xlarge}`,
+  fontSize: theme.fontSize.large,
+  fontWeight: theme.fontWeight.semiBold,
 })

@@ -20,7 +20,9 @@ export const theme = createGlobalTheme(':root', {
     xlarge: '24px',
     xxlarge: '32px',
     xxxlarge: '48px',
-    huge: '96px',
+    great: '64px',
+    xgreat: '80px',
+    xxgreat: '96px',
   },
   fontSize: {
     tiny: '12px',

@@ -5,8 +5,8 @@ import { sprinkles } from '#components/shared/sprinkles.css'
 
 export const container = style([
   sprinkles({
-    marginTop: {
-      desktop: 'huge',
+    marginY: {
+      desktop: 'xgreat',
       tablet: 'xxxlarge',
       mobile: 'xlarge',
     },
