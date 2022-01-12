@@ -3,7 +3,12 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import { InView } from 'react-intersection-observer'
 import { useSetRecoilState, useRecoilValue } from 'recoil'
+import config from 'config'
 
+import * as styles from '../styles.css'
+
+import PageSEO from '#components/shared/SEO/PageSEO'
+import Card from '#components/card'
 import { hasNextPostsPageState, allPostsState, pageState, currentPostsState } from '#store/posts'
 import { Post } from '#types/post'
 import { getAllPosts } from '#utils/posts'
@@ -24,15 +29,24 @@ function PostsPage({ allPosts }: { allPosts: Post[] }) {
 
   return (
     <>
-      {currentPosts.map((post, index) => (
-        <InView onChange={(InView) => handleChangeInview(InView, index)} key={index}>
-          <div style={{ height: 200 }}>
-            <Link href={`/${post.slug.year}/${post.slug.subject}/${post.slug.title}`}>
-              {post.frontMatter.title}
+      <PageSEO title="Posts" url={config.url} />
+      <h1 className={styles.title}>Posts</h1>
+      <ul className={styles.container}>
+        {currentPosts.map(({ slug, frontMatter }, index) => (
+          <InView
+            key={index}
+            as="li"
+            className={styles.cardContainer}
+            onChange={(InView) => handleChangeInview(InView, index)}
+          >
+            <Link href={`/${slug.year}/${slug.subject}/${slug.title}`}>
+              <a>
+                <Card frontMatter={frontMatter} />
+              </a>
             </Link>
-          </div>
-        </InView>
-      ))}
+          </InView>
+        ))}
+      </ul>
     </>
   )
 }
