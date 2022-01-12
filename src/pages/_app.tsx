@@ -7,6 +7,7 @@ import { RecoilRoot } from 'recoil'
 import '#shared/globalStyles.css.ts'
 import Header from '#components/header'
 import Layout from '#components/layout'
+import Footer from '#components/footer'
 
 function App({ Component, pageProps }: AppProps) {
   const Router = useRouter()
@@ -54,6 +55,7 @@ function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Footer />
     </RecoilRoot>
   )
 }

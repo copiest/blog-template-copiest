@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import config from 'config'
 
-import { cardContainer } from './styles.css'
+import * as styles from './styles.css'
 
 import PageSEO from '#components/shared/SEO/PageSEO'
 import Card from '#components/card'
@@ -14,9 +14,10 @@ function IndexPage({ posts }: { posts: Post[] }) {
   return (
     <>
       <PageSEO title="Home" url={config.url} />
-      <ul>
+      <h1 className={styles.title}>Latest</h1>
+      <ul className={styles.container}>
         {posts.map(({ frontMatter, slug }, index) => (
-          <li key={index} className={cardContainer}>
+          <li key={index} className={styles.cardContainer}>
             <Link href={`/${slug.year}/${slug.subject}/${slug.title}`}>
               <a>
                 <Card frontMatter={frontMatter} />

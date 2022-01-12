@@ -11,7 +11,7 @@ export const container = style([
     },
   }),
   {
-    maxWidth: '720px',
+    maxWidth: '700px',
     margin: 'auto',
   },
 ])
