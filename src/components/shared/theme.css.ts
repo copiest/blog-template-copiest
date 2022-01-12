@@ -53,6 +53,7 @@ export const theme = createGlobalTheme(':root', {
   },
   font: {
     header: 'Bebas Neue, cursive',
+    footer: 'Barlow Condensed, sans-serif',
     cardTitle: 'Do Hyeon, sans-serif',
   },
   borderColor: {
