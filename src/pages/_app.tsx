@@ -44,7 +44,8 @@ function App({ Component, pageProps }: AppProps) {
       window.history.scrollRestoration = 'manual'
       return true
     })
-  }, [Router])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <RecoilRoot>
