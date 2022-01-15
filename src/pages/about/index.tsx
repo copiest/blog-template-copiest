@@ -1,10 +1,12 @@
+import * as styles from './styles.css'
+
 import PageSEO from '#components/shared/SEO/PageSEO'
 
 function About() {
   return (
     <>
       <PageSEO title="About" url="https://tigger.dev/about" />
-      <div>About</div>
+      <section className={styles.container}>About</section>
     </>
   )
 }
