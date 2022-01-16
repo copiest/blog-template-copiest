@@ -1,7 +1,7 @@
 import { globalStyle, style } from '@vanilla-extract/css'
 
 import { theme } from '#components/shared/theme.css'
-import { mediaQuery, sprinkles } from '#components/shared/sprinkles.css'
+import { sprinkles } from '#components/shared/sprinkles.css'
 
 export const container = style([
   sprinkles({
@@ -109,32 +109,23 @@ export const companyContainer = style([
 ])
 
 export const companyTitle = style({
-  marginBottom: theme.space.medium,
   fontSize: theme.fontSize.large,
   fontWeight: theme.fontWeight.semiBold,
 })
 
 export const companySubtitle = style({
   display: 'block',
-  marginBottom: theme.space.small,
+  marginBottom: '12px',
   fontSize: theme.fontSize.medium,
 })
 
 export const companyDescriptionContainer = style({
   '@media': {
-    [mediaQuery.mobile]: {
-      selectors: {
-        '&:last-of-type': {
-          paddingLeft: theme.space.large,
-          borderLeft: `${theme.space.small} solid ${theme.color.skyblue}`,
-        },
-      },
-    },
     'screen and (max-width: 768px)': {
       selectors: {
         '&:last-of-type': {
           paddingLeft: theme.space.large,
-          borderLeft: `${theme.space.small} solid ${theme.color.skyblue}`,
+          borderLeft: `${theme.space.small} solid ${theme.color.brightblue}`,
         },
       },
     },
@@ -152,12 +143,12 @@ export const companyDescription = style({
 })
 
 export const projectTitle = style({
-  margin: `${theme.space.medium} 0`,
+  marginTop: theme.space.medium,
   fontSize: theme.fontSize.large,
   fontWeight: theme.fontWeight.semiBold,
 })
 
-export const proejctSubtitle = style({
+export const projectSubtitle = style({
   display: 'block',
   marginBottom: theme.space.large,
   fontSize: theme.fontSize.medium,
@@ -169,7 +160,7 @@ export const projectDescription = style({
   fontSize: theme.fontSize.medium,
 })
 
-export const proejctItems = style({
+export const projectItems = style({
   marginBottom: '20px',
 })
 
@@ -192,9 +183,10 @@ export const projectStack = style({
 
 globalStyle(`${container} > *`, {
   color: theme.color.bluegray,
+  lineHeight: '1.3',
 })
 
-globalStyle(`${proejctItems} > li`, {
+globalStyle(`${projectItems} > li`, {
   margin: `${theme.space.medium} 0`,
   position: 'relative',
   paddingInlineStart: theme.space.large,
@@ -202,13 +194,13 @@ globalStyle(`${proejctItems} > li`, {
   fontSize: theme.fontSize.medium,
 })
 
-globalStyle(`${proejctItems} > li:before`, {
+globalStyle(`${projectItems} > li:before`, {
   content: '',
   position: 'absolute',
-  top: '6px',
+  top: '9px',
   left: 0,
   width: '5px',
   height: '5px',
-  backgroundColor: theme.color.skyblue,
+  backgroundColor: theme.color.brightblue,
   borderRadius: theme.borderRadius.circle,
 })
