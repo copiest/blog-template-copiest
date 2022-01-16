@@ -24,16 +24,86 @@ function About() {
               <span className={styles.companySubtitle}>Frontend Engineer</span>
               <span className={styles.companySubtitle}>2021. 06 ~ 현재</span>
             </div>
-            <div className={styles.companyDescription}>
-              <div>
-                <h4>프립 웹 서비스 개편</h4>
-                <span>2021. 07 ~ 2022. 01</span>
+            <div className={styles.companyDescriptionContainer}>
+              <div className={styles.companyDescription}>
+                <h4 className={styles.projectTitle}>프립 웹 서비스 개편</h4>
+                <span className={styles.proejctSubtitle}>2021. 07 ~ 2022. 01</span>
                 <div>
-                  <strong>프립 웹 서비스와 관련된 개발 진행</strong>
-                  <ul>
+                  <strong className={styles.projectDescription}>
+                    프립 웹 서비스와 관련된 개발 진행
+                  </strong>
+                  <ul className={styles.proejctItems}>
                     <li>ContextAPI와 Hook을 이용한 상태관리</li>
-                    <li>Redux와 Redux-saga를 활용한 글로벌 상태관리 및 비동기 처리</li>
+                    <li>
+                      Redux와 Redux-saga를 ContextAPI와 Hook을 이용한 상태관리ContextAPI와 Hook을
+                      이용한 상태관리
+                    </li>
                     <li>REST API에서 GraphQL Apollo로 전환</li>
+                  </ul>
+                  <ul className={styles.projectStacks}>
+                    <li className={styles.projectStack}>Typescript</li>
+                    <li className={styles.projectStack}>React</li>
+                    <li className={styles.projectStack}>Redux</li>
+                    <li className={styles.projectStack}>Redux-saga</li>
+                  </ul>
+                </div>
+              </div>
+              <div className={styles.companyDescription}>
+                <h4 className={styles.projectTitle}>프립 웹 서비스 개편</h4>
+                <span className={styles.proejctSubtitle}>2021. 07 ~ 2022. 01</span>
+                <div>
+                  <strong className={styles.projectDescription}>
+                    프립 웹 서비스와 관련된 개발 진행
+                  </strong>
+                  <ul className={styles.proejctItems}>
+                    <li>ContextAPI와 Hook을 이용한 상태관리</li>
+                    <li>
+                      Redux와 Redux-saga를 ContextAPI와 Hook을 이용한 상태관리ContextAPI와 Hook을
+                      이용한 상태관리
+                    </li>
+                    <li>REST API에서 GraphQL Apollo로 전환</li>
+                  </ul>
+                  <ul className={styles.projectStacks}>
+                    <li className={styles.projectStack}>Typescript</li>
+                    <li className={styles.projectStack}>React</li>
+                    <li className={styles.projectStack}>Redux</li>
+                    <li className={styles.projectStack}>Redux-saga</li>
+                    <li className={styles.projectStack}>Typescript</li>
+                    <li className={styles.projectStack}>React</li>
+                    <li className={styles.projectStack}>Redux</li>
+                    <li className={styles.projectStack}>Redux-saga</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.experienceContainer}>
+            <div className={styles.companyContainer}>
+              <h3 className={styles.companyTitle}>프립(프렌트립)</h3>
+              <span className={styles.companySubtitle}>Frontend Engineer</span>
+              <span className={styles.companySubtitle}>2021. 06 ~ 현재</span>
+            </div>
+            <div className={styles.companyDescriptionContainer}>
+              <div className={styles.companyDescription}>
+                <h4 className={styles.projectTitle}>프립 웹 서비스 개편</h4>
+                <span className={styles.proejctSubtitle}>2021. 07 ~ 2022. 01</span>
+                <div>
+                  <strong className={styles.projectDescription}>
+                    프립 웹 서비스와 관련된 개발 진행
+                  </strong>
+                  <ul className={styles.proejctItems}>
+                    <li>ContextAPI와 Hook을 이용한 상태관리</li>
+                    <li>
+                      Redux와 Redux-saga를 ContextAPI와 Hook을 이용한 상태관리ContextAPI와 Hook을
+                      이용한 상태관리
+                    </li>
+                    <li>REST API에서 GraphQL Apollo로 전환</li>
+                  </ul>
+                  <ul className={styles.projectStacks}>
+                    <li className={styles.projectStack}>Typescript</li>
+                    <li className={styles.projectStack}>React</li>
+                    <li className={styles.projectStack}>Redux</li>
+                    <li className={styles.projectStack}>Redux-saga</li>
                   </ul>
                 </div>
               </div>
