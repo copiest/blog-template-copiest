@@ -84,6 +84,11 @@ export const experienceContainer = style([
       tablet: 'flex-start',
       mobile: 'flex-start',
     },
+    marginBottom: {
+      desktop: 'great',
+      tablet: 'great',
+      mobile: 'great',
+    },
   }),
   {
     display: 'flex',
@@ -94,15 +99,19 @@ export const companyContainer = style([
   sprinkles({
     marginBottom: {
       desktop: 'none',
-      tablet: 'xxlarge',
-      mobile: 'xxlarge',
+      tablet: 'xlarge',
+      mobile: 'xlarge',
     },
   }),
+  {
+    flex: '3',
+  },
 ])
 
 export const companyTitle = style({
   marginBottom: theme.space.medium,
   fontSize: theme.fontSize.large,
+  fontWeight: theme.fontWeight.semiBold,
 })
 
 export const companySubtitle = style({
@@ -111,7 +120,7 @@ export const companySubtitle = style({
   fontSize: theme.fontSize.medium,
 })
 
-export const companyDescription = style({
+export const companyDescriptionContainer = style({
   '@media': {
     [mediaQuery.mobile]: {
       selectors: {
@@ -121,16 +130,85 @@ export const companyDescription = style({
         },
       },
     },
-    [mediaQuery.tablet]: {
+    'screen and (max-width: 768px)': {
       selectors: {
         '&:last-of-type': {
           paddingLeft: theme.space.large,
+          borderLeft: `${theme.space.small} solid ${theme.color.skyblue}`,
         },
       },
     },
   },
+  flex: '7',
+})
+
+export const companyDescription = style({
+  marginBottom: theme.space.xlarge,
+  selectors: {
+    '&:last-child': {
+      marginBottom: theme.space.none,
+    },
+  },
+})
+
+export const projectTitle = style({
+  margin: `${theme.space.medium} 0`,
+  fontSize: theme.fontSize.large,
+  fontWeight: theme.fontWeight.semiBold,
+})
+
+export const proejctSubtitle = style({
+  display: 'block',
+  marginBottom: theme.space.large,
+  fontSize: theme.fontSize.medium,
+})
+
+export const projectDescription = style({
+  display: 'block',
+  marginBottom: theme.space.xlarge,
+  fontSize: theme.fontSize.medium,
+})
+
+export const proejctItems = style({
+  marginBottom: '20px',
+})
+
+export const projectStacks = style({
+  display: 'flex',
+  flexWrap: 'wrap',
+})
+
+export const projectStack = style({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  margin: `0 ${theme.space.medium} ${theme.space.medium} 0`,
+  padding: theme.space.medium,
+  color: theme.color.bluegray,
+  fontSize: theme.fontSize.small,
+  backgroundColor: '#f0f4f6',
+  borderRadius: theme.borderRadius.medium,
 })
 
 globalStyle(`${container} > *`, {
   color: theme.color.bluegray,
+})
+
+globalStyle(`${proejctItems} > li`, {
+  margin: `${theme.space.medium} 0`,
+  position: 'relative',
+  paddingInlineStart: theme.space.large,
+  color: theme.color.bluegray,
+  fontSize: theme.fontSize.medium,
+})
+
+globalStyle(`${proejctItems} > li:before`, {
+  content: '',
+  position: 'absolute',
+  top: '6px',
+  left: 0,
+  width: '5px',
+  height: '5px',
+  backgroundColor: theme.color.skyblue,
+  borderRadius: theme.borderRadius.circle,
 })
