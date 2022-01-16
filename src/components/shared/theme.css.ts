@@ -11,6 +11,7 @@ export const theme = createGlobalTheme(':root', {
     pink: '#c586c0',
     lightblue: '#54a0ff',
     darkblue: '#434c58',
+    skyblue: '#0077B7',
   },
   space: {
     none: '0',
