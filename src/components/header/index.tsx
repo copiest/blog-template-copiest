@@ -29,7 +29,9 @@ export default function Header() {
           <ul className={menuContainer}>
             {config.menus.map(({ id, menu, link }) => (
               <li key={id} className={menuTitle}>
-                <Link href={link}>{menu}</Link>
+                <Link href={link}>
+                  <span>{menu}</span>
+                </Link>
               </li>
             ))}
           </ul>
