@@ -30,7 +30,7 @@ export const textContainer = style([
   },
 ])
 
-export const titleText = style([
+export const title = style([
   sprinkles({
     fontSize: {
       desktop: 'xlarge',
@@ -47,6 +47,10 @@ export const titleText = style([
       tablet: 'large',
       mobile: 'none',
     },
+    color: {
+      lightMode: 'black',
+      darkMode: 'lightwhite',
+    },
   }),
   {
     fontWeight: theme.fontWeight.bold,
@@ -54,19 +58,23 @@ export const titleText = style([
   twoLineEllipsis,
 ])
 
-export const descriptionText = style([
+export const description = style([
   sprinkles({
     marginTop: {
       desktop: 'none',
       tablet: 'none',
       mobile: 'medium',
     },
+    color: {
+      lightMode: 'darkblue',
+      darkMode: 'darkwhite',
+    },
   }),
-  { lineHeight: 'normal', color: theme.color.darkblue },
+  { lineHeight: 'normal' },
   oneLineEllipsis,
 ])
 
-export const dateText = style([
+export const date = style([
   sprinkles({
     marginBottom: {
       desktop: 'none',

@@ -13,6 +13,12 @@ export const theme = createGlobalTheme(':root', {
     brightblue: '#73a9ef',
     darkblue: '#434c58',
     skyblue: '#0077B7',
+    mageticdark: '#1c1d24',
+    graywhite: '#728197',
+    lightwhite: '#dfdfdf',
+    darkwhite: '#909499',
+    whiteblue: '#f0f4f6',
+    bluegreen: '#598197',
   },
   space: {
     none: '0',

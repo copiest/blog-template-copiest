@@ -1,23 +1,33 @@
 import { style } from '@vanilla-extract/css'
 
 import { theme } from '#shared/theme.css'
-import { mediaQuery } from '#components/shared/sprinkles.css'
+import { mediaQuery, sprinkles } from '#components/shared/sprinkles.css'
 
-export const footer = style({
-  padding: '20px',
-  color: '#598197',
-  textAlign: 'center',
-  lineHeight: '18px',
-  letterSpacing: '1.6px',
-  backgroundColor: '#f0f4f6',
-  fontSize: '13px',
-  fontFamily: theme.font.footer,
-  '@media': {
-    [mediaQuery.mobile]: {
-      fontSize: theme.fontSize.tiny,
+export const footer = style([
+  sprinkles({
+    backgroundColor: {
+      lightMode: 'whiteblue',
+      darkMode: 'mageticdark',
+    },
+    color: {
+      lightMode: 'bluegreen',
+      darkMode: 'lightwhite',
+    },
+  }),
+  {
+    padding: '20px',
+    textAlign: 'center',
+    lineHeight: '18px',
+    letterSpacing: '1.6px',
+    fontSize: '13px',
+    fontFamily: theme.font.footer,
+    '@media': {
+      [mediaQuery.mobile]: {
+        fontSize: theme.fontSize.tiny,
+      },
     },
   },
-})
+])
 
 export const contact = style({
   display: 'block',

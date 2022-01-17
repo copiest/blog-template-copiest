@@ -4,15 +4,22 @@ import { theme } from '#shared/theme.css'
 import { sprinkles } from '#components/shared/sprinkles.css'
 import { Z_INDEX } from '#constants'
 
-export const header = style({
-  position: 'sticky',
-  top: 0,
-  left: 0,
-  height: '60px',
-  backgroundColor: `${theme.color.white}`,
-  borderBottom: `1px solid ${theme.borderColor.grayOpacity}`,
-  zIndex: Z_INDEX.header,
-})
+export const header = style([
+  sprinkles({
+    backgroundColor: {
+      lightMode: 'white',
+      darkMode: 'mageticdark',
+    },
+  }),
+  {
+    position: 'sticky',
+    top: 0,
+    left: 0,
+    height: '60px',
+    borderBottom: `1px solid ${theme.borderColor.grayOpacity}`,
+    zIndex: Z_INDEX.header,
+  },
+])
 
 export const navbar = style({
   width: '100%',
@@ -44,6 +51,10 @@ export const title = style([
     display: {
       mobile: 'none',
     },
+    color: {
+      lightMode: 'black',
+      darkMode: 'white',
+    },
   }),
   {
     fontFamily: theme.font.header,
@@ -56,11 +67,19 @@ export const menuContainer = style({
   display: 'flex',
 })
 
-export const menuTitle = style({
-  fontFamily: theme.font.header,
-  letterSpacing: theme.letterSpacing.medium,
-  marginRight: theme.space.large,
-  ':last-child': {
-    marginRight: theme.space.none,
+export const menuTitle = style([
+  sprinkles({
+    color: {
+      lightMode: 'black',
+      darkMode: 'white',
+    },
+  }),
+  {
+    fontFamily: theme.font.header,
+    letterSpacing: theme.letterSpacing.medium,
+    marginRight: theme.space.large,
+    ':last-child': {
+      marginRight: theme.space.none,
+    },
   },
-})
+])
