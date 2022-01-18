@@ -142,11 +142,19 @@ export const companyDescription = style({
   },
 })
 
-export const projectTitle = style({
-  marginTop: theme.space.medium,
-  fontSize: theme.fontSize.large,
-  fontWeight: theme.fontWeight.semiBold,
-})
+export const projectTitle = style([
+  sprinkles({
+    marginTop: {
+      desktop: 'none',
+      tablet: 'medium',
+      mobile: 'medium',
+    },
+  }),
+  {
+    fontSize: theme.fontSize.large,
+    fontWeight: theme.fontWeight.semiBold,
+  },
+])
 
 export const projectSubtitle = style({
   display: 'block',

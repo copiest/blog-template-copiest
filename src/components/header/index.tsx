@@ -4,7 +4,16 @@ import config from 'config'
 
 import * as styles from './styles.css'
 
-export default function Header() {
+import { CustomThemeType } from '#pages/_app'
+import SunIcon from '#components/icons/sun'
+import MoonIcon from '#components/icons/moon'
+
+interface HeaderProps {
+  theme: CustomThemeType
+  onChangeTheme: () => void
+}
+
+export default function Header({ theme, onChangeTheme }: HeaderProps) {
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
@@ -25,6 +34,9 @@ export default function Header() {
                 </Link>
               </li>
             ))}
+            <li onClick={onChangeTheme} aria-hidden="true">
+              {theme === 'light' ? <SunIcon /> : <MoonIcon />}
+            </li>
           </ul>
         </div>
       </nav>

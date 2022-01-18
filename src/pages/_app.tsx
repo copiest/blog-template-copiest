@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useRouter } from 'next/dist/client/router'
@@ -10,12 +10,40 @@ import '#shared/globalStyles.css.ts'
 import Header from '#components/header'
 import Layout from '#components/layout'
 import Footer from '#components/footer'
-import { darkTheme } from '#shared/theme.css'
+import { lightTheme, darkTheme } from '#shared/theme.css'
+import { BLOG_THEME_NAME } from '#constants'
+
+export type CustomThemeType = 'light' | 'dark'
 
 function App({ Component, pageProps }: AppProps) {
   const Router = useRouter()
+  const [theme, setTheme] = useState<CustomThemeType>('light')
+  const customTheme = useMemo(() => (theme === 'dark' ? darkTheme : lightTheme), [theme])
 
-  useEffect(() => {
+  const handleThemeChange = (): void => {
+    if (theme === 'light') {
+      setTheme('dark')
+      localStorage.setItem(BLOG_THEME_NAME, 'dark')
+    } else {
+      setTheme('light')
+      localStorage.setItem(BLOG_THEME_NAME, 'light')
+    }
+  }
+
+  useEffect((): void => {
+    if (!localStorage.getItem(BLOG_THEME_NAME)) {
+      localStorage.setItem(BLOG_THEME_NAME, 'light')
+    }
+
+    const currentTheme =
+      typeof window !== undefined
+        ? (localStorage.getItem(BLOG_THEME_NAME) as CustomThemeType)
+        : 'light'
+
+    setTheme(currentTheme)
+  }, [])
+
+  useEffect((): void => {
     window.history.scrollRestoration = 'auto'
 
     const cachedScrollPositions: Array<[number, number]> = []
@@ -52,11 +80,11 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <RecoilRoot>
-      <div className={[styles.bodyContainer, darkTheme].join(' ')}>
+      <div className={[styles.bodyContainer, customTheme].join(' ')}>
         <Head>
           <meta content="width=device-width, initial-scale=1" name="viewport" />
         </Head>
-        <Header />
+        <Header theme={theme} onChangeTheme={handleThemeChange} />
         <Layout>
           <Component {...pageProps} />
         </Layout>
