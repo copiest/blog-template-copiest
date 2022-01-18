@@ -31,7 +31,7 @@ export const title = style([
     },
   }),
   {
-    color: theme.color.darkblue,
+    color: theme.colors.about.title,
     fontWeight: theme.fontWeight.bold,
     lineHeight: '1.2',
     whiteSpace: 'pre-line',
@@ -67,7 +67,7 @@ export const subtitle = style([
     },
   }),
   {
-    color: theme.color.darkblue,
+    color: theme.colors.about.subtitle,
     fontWeight: theme.fontWeight.bold,
   },
 ])
@@ -125,7 +125,7 @@ export const companyDescriptionContainer = style({
       selectors: {
         '&:last-of-type': {
           paddingLeft: theme.space.large,
-          borderLeft: `${theme.space.small} solid ${theme.color.brightblue}`,
+          borderLeft: `${theme.space.small} solid ${theme.colors.about.company.borderLeftColor}`,
         },
       },
     },
@@ -175,14 +175,14 @@ export const projectStack = style({
   alignItems: 'center',
   margin: `0 ${theme.space.medium} ${theme.space.medium} 0`,
   padding: theme.space.medium,
-  color: theme.color.bluegray,
+  color: theme.colors.about.project.stack.color,
   fontSize: theme.fontSize.small,
-  backgroundColor: '#f0f4f6',
+  backgroundColor: theme.colors.about.project.stack.backgroundColor,
   borderRadius: theme.borderRadius.medium,
 })
 
 globalStyle(`${container} > *`, {
-  color: theme.color.bluegray,
+  color: theme.colors.about.color,
   lineHeight: '1.3',
 })
 
@@ -190,7 +190,7 @@ globalStyle(`${projectItems} > li`, {
   margin: `${theme.space.medium} 0`,
   position: 'relative',
   paddingInlineStart: theme.space.large,
-  color: theme.color.bluegray,
+  color: theme.colors.about.project.item.color,
   fontSize: theme.fontSize.medium,
 })
 
@@ -201,6 +201,6 @@ globalStyle(`${projectItems} > li:before`, {
   left: 0,
   width: '5px',
   height: '5px',
-  backgroundColor: theme.color.brightblue,
+  backgroundColor: theme.colors.about.project.item.backgroundColor,
   borderRadius: theme.borderRadius.circle,
 })

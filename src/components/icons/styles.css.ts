@@ -13,9 +13,10 @@ export const container = style({
 
 export const svg = style({
   fill: 'currentcolor',
+  color: theme.colors.domain.icon.backgroundColor,
   selectors: {
     '&:hover': {
-      color: theme.color.skyblue,
+      color: theme.colors.domain.icon.color,
     },
   },
 })
