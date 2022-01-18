@@ -1,16 +1,9 @@
 import { style } from '@vanilla-extract/css'
 
 import { theme } from '#shared/theme.css'
-import { sprinkles } from '#components/shared/sprinkles.css'
 import { Z_INDEX } from '#constants'
 
 export const header = style([
-  sprinkles({
-    backgroundColor: {
-      lightMode: 'white',
-      darkMode: 'mageticdark',
-    },
-  }),
   {
     position: 'sticky',
     top: 0,
@@ -18,6 +11,7 @@ export const header = style([
     height: '60px',
     borderBottom: `1px solid ${theme.borderColor.grayOpacity}`,
     zIndex: Z_INDEX.header,
+    backgroundColor: theme.colors.domain.header.backgroundColor,
   },
 ])
 
@@ -47,16 +41,8 @@ export const imageContainer = style({
 })
 
 export const title = style([
-  sprinkles({
-    display: {
-      mobile: 'none',
-    },
-    color: {
-      lightMode: 'black',
-      darkMode: 'white',
-    },
-  }),
   {
+    color: theme.colors.domain.header.color,
     fontFamily: theme.font.header,
     fontSize: theme.fontSize.large,
     letterSpacing: theme.letterSpacing.medium,
@@ -68,12 +54,6 @@ export const menuContainer = style({
 })
 
 export const menuTitle = style([
-  sprinkles({
-    color: {
-      lightMode: 'black',
-      darkMode: 'white',
-    },
-  }),
   {
     fontFamily: theme.font.header,
     letterSpacing: theme.letterSpacing.medium,
@@ -81,5 +61,12 @@ export const menuTitle = style([
     ':last-child': {
       marginRight: theme.space.none,
     },
+  },
+])
+
+export const menuName = style([
+  {
+    color: theme.colors.domain.header.color,
+    cursor: 'pointer',
   },
 ])

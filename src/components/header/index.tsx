@@ -2,35 +2,26 @@ import Image from 'next/image'
 import Link from 'next/link'
 import config from 'config'
 
-import {
-  header,
-  navbar,
-  container,
-  logoContainer,
-  imageContainer,
-  title,
-  menuTitle,
-  menuContainer,
-} from './styles.css'
+import * as styles from './styles.css'
 
 export default function Header() {
   return (
-    <header className={header}>
-      <nav className={navbar}>
-        <div className={container}>
+    <header className={styles.header}>
+      <nav className={styles.navbar}>
+        <div className={styles.container}>
           <Link href="/">
-            <div className={logoContainer}>
-              <div className={imageContainer}>
+            <div className={styles.logoContainer}>
+              <div className={styles.imageContainer}>
                 <Image src="/logo.png" alt="tigger blog logo" width="48px" height="44px" />
               </div>
-              <strong className={title}>{config.title}</strong>
+              <strong className={styles.title}>{config.title}</strong>
             </div>
           </Link>
-          <ul className={menuContainer}>
+          <ul className={styles.menuContainer}>
             {config.menus.map(({ id, menu, link }) => (
-              <li key={id} className={menuTitle}>
+              <li key={id} className={styles.menuTitle}>
                 <Link href={link}>
-                  <span>{menu}</span>
+                  <span className={styles.menuName}>{menu}</span>
                 </Link>
               </li>
             ))}
