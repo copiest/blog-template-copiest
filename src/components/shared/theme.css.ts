@@ -20,6 +20,7 @@ export const colorTheme = {
   bluegreen: '#598197',
   brightgray: '#919eb1',
   graydark: '#363636',
+  deepdark: '#0a1114',
 }
 
 export const themes = createGlobalTheme(':root', {
@@ -94,6 +95,10 @@ const colors = createThemeContract({
       title: null,
       date: null,
     },
+    icon: {
+      color: null,
+      backgroundColor: null,
+    },
   },
   post: {
     a: null,
@@ -112,6 +117,24 @@ const colors = createThemeContract({
     },
     p: null,
     strong: null,
+  },
+  about: {
+    color: null,
+    title: null,
+    subtitle: null,
+    company: {
+      borderLeftColor: null,
+    },
+    project: {
+      stack: {
+        color: null,
+        backgroundColor: null,
+      },
+      item: {
+        color: null,
+        backgroundColor: null,
+      },
+    },
   },
 })
 
@@ -137,6 +160,10 @@ export const lightTheme = createTheme(colors, {
       title: colorTheme.black,
       date: colorTheme.gray,
     },
+    icon: {
+      color: colorTheme.skyblue,
+      backgroundColor: colorTheme.black,
+    },
   },
   post: {
     a: colorTheme.lightblue,
@@ -155,6 +182,24 @@ export const lightTheme = createTheme(colors, {
     },
     p: colorTheme.bluegray,
     strong: colorTheme.darkblue,
+  },
+  about: {
+    color: colorTheme.bluegray,
+    title: colorTheme.darkblue,
+    subtitle: colorTheme.darkblue,
+    company: {
+      borderLeftColor: colorTheme.brightblue,
+    },
+    project: {
+      stack: {
+        color: colorTheme.bluegray,
+        backgroundColor: colorTheme.whiteblue,
+      },
+      item: {
+        color: colorTheme.bluegray,
+        backgroundColor: colorTheme.brightblue,
+      },
+    },
   },
 })
 
@@ -180,6 +225,10 @@ export const darkTheme = createTheme(colors, {
       title: colorTheme.white,
       date: colorTheme.gray,
     },
+    icon: {
+      color: colorTheme.skyblue,
+      backgroundColor: colorTheme.graywhite,
+    },
   },
   post: {
     a: colorTheme.lightblue,
@@ -198,6 +247,24 @@ export const darkTheme = createTheme(colors, {
     },
     p: colorTheme.brightgray,
     strong: colorTheme.darkblue,
+  },
+  about: {
+    color: colorTheme.brightgray,
+    title: colorTheme.brightgray,
+    subtitle: colorTheme.darkblue,
+    company: {
+      borderLeftColor: colorTheme.brightblue,
+    },
+    project: {
+      stack: {
+        color: colorTheme.gray,
+        backgroundColor: colorTheme.deepdark,
+      },
+      item: {
+        color: colorTheme.brightgray,
+        backgroundColor: colorTheme.brightblue,
+      },
+    },
   },
 })
 
