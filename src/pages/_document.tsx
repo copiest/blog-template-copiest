@@ -1,7 +1,5 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 
-import * as styles from './styles.css'
-
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -21,7 +19,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className={styles.bodyContainer}>
+        <body>
           <Main />
           <NextScript />
         </body>

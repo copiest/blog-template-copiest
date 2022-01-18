@@ -10,7 +10,7 @@ globalStyle(`${ul} > li`, {
   margin: `${theme.space.medium} 0`,
   position: 'relative',
   paddingInlineStart: theme.space.xlarge,
-  color: theme.color.bluegray,
+  color: theme.colors.post.ul.color,
   fontSize: theme.fontSize.medium,
 })
 
@@ -21,6 +21,6 @@ globalStyle(`${ul} > li:before`, {
   left: 0,
   width: '6px',
   height: '6px',
-  backgroundColor: theme.color.bluegray,
+  backgroundColor: theme.colors.post.ul.backgroundColor,
   borderRadius: theme.borderRadius.circle,
 })

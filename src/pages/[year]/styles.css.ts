@@ -26,7 +26,7 @@ export const title = style([
       mobile: 'large',
     },
   }),
-  { fontWeight: theme.fontWeight.bold },
+  { fontWeight: theme.fontWeight.bold, color: theme.colors.domain.detail.title },
 ])
 
 export const date = style([
@@ -39,7 +39,7 @@ export const date = style([
   }),
   {
     display: 'block',
-    color: theme.color.gray,
+    color: theme.colors.domain.detail.date,
     fontSize: theme.fontSize.medium,
     textAlign: 'center',
   },

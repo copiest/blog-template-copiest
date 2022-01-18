@@ -6,7 +6,7 @@ export const blockquote = style({
   position: 'relative',
   marginBottom: theme.space.xlarge,
   padding: `0 ${theme.space.large}`,
-  color: theme.color.bluegray,
+  color: theme.colors.post.blockquote.color,
   fontWeight: theme.fontWeight.medium,
   fontStyle: 'italic',
 })
@@ -17,5 +17,5 @@ globalStyle(`${blockquote} > :before`, {
   top: 0,
   bottom: 0,
   left: 0,
-  borderLeft: `${theme.space.small} solid ${theme.color.lightgray}`,
+  borderLeft: `${theme.space.small} solid ${theme.colors.post.blockquote.color}`,
 })

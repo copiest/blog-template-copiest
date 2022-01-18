@@ -1,19 +1,9 @@
 import { style } from '@vanilla-extract/css'
 
 import { theme } from '#shared/theme.css'
-import { mediaQuery, sprinkles } from '#components/shared/sprinkles.css'
+import { mediaQuery } from '#components/shared/sprinkles.css'
 
 export const footer = style([
-  sprinkles({
-    backgroundColor: {
-      lightMode: 'whiteblue',
-      darkMode: 'mageticdark',
-    },
-    color: {
-      lightMode: 'bluegreen',
-      darkMode: 'lightwhite',
-    },
-  }),
   {
     padding: '20px',
     textAlign: 'center',
@@ -26,6 +16,8 @@ export const footer = style([
         fontSize: theme.fontSize.tiny,
       },
     },
+    color: theme.colors.domain.footer.color,
+    backgroundColor: theme.colors.domain.footer.backgroundColor,
   },
 ])
 
@@ -34,10 +26,10 @@ export const contact = style({
 })
 
 export const mail = style({
-  color: theme.color.bluegray,
+  color: theme.colors.domain.footer.contactColor,
   selectors: {
     '&:active, &:link, &:visited': {
-      color: theme.color.bluegray,
+      color: theme.colors.domain.footer.contactColor,
     },
   },
 })

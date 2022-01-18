@@ -11,7 +11,7 @@ globalStyle(`${ol} > li`, {
   margin: `${theme.space.medium} 0`,
   position: 'relative',
   paddingInlineStart: theme.space.xlarge,
-  color: theme.color.bluegray,
+  color: theme.colors.post.ol,
   fontSize: theme.fontSize.medium,
 })
 

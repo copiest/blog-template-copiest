@@ -4,10 +4,13 @@ import Head from 'next/head'
 import { useRouter } from 'next/dist/client/router'
 import { RecoilRoot } from 'recoil'
 
+import * as styles from './styles.css'
+
 import '#shared/globalStyles.css.ts'
 import Header from '#components/header'
 import Layout from '#components/layout'
 import Footer from '#components/footer'
+import { darkTheme } from '#shared/theme.css'
 
 function App({ Component, pageProps }: AppProps) {
   const Router = useRouter()
@@ -49,14 +52,16 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <RecoilRoot>
-      <Head>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-      </Head>
-      <Header />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <Footer />
+      <div className={[styles.bodyContainer, darkTheme].join(' ')}>
+        <Head>
+          <meta content="width=device-width, initial-scale=1" name="viewport" />
+        </Head>
+        <Header />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <Footer />
+      </div>
     </RecoilRoot>
   )
 }

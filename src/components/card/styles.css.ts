@@ -47,13 +47,10 @@ export const title = style([
       tablet: 'large',
       mobile: 'none',
     },
-    color: {
-      lightMode: 'black',
-      darkMode: 'lightwhite',
-    },
   }),
   {
     fontWeight: theme.fontWeight.bold,
+    color: theme.colors.domain.card.title,
   },
   twoLineEllipsis,
 ])
@@ -65,12 +62,8 @@ export const description = style([
       tablet: 'none',
       mobile: 'medium',
     },
-    color: {
-      lightMode: 'darkblue',
-      darkMode: 'darkwhite',
-    },
   }),
-  { lineHeight: 'normal' },
+  { lineHeight: 'normal', color: theme.colors.domain.card.description },
   oneLineEllipsis,
 ])
 
@@ -89,7 +82,6 @@ export const date = style([
   }),
   {
     display: 'block',
-
-    color: theme.color.gray,
+    color: theme.colors.domain.card.date,
   },
 ])
