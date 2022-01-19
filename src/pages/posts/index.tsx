@@ -7,7 +7,7 @@ import config from 'config'
 
 import * as styles from '../styles.css'
 
-import PageSEO from '#components/shared/SEO/PASEO'
+import PageSEO from '#components/shared/SEO/PageSEO'
 import Card from '#components/card'
 import { hasNextPostsPageState, allPostsState, pageState, currentPostsState } from '#store/posts'
 import { Post } from '#types/post'

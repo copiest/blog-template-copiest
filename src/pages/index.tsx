@@ -2,9 +2,8 @@ import { GetStaticProps } from 'next'
 import Link from 'next/link'
 import config from 'config'
 
-import * as styles from './styles.css'
-
-import PageSEO from '#components/shared/SEO/PASEO'
+import * as styles from '#shared/styles/pages/posts/styles.css'
+import PageSEO from '#components/shared/SEO/PageSEO'
 import Card from '#components/card'
 import { Post } from '#types/post'
 import { getAllPosts } from '#utils/posts'

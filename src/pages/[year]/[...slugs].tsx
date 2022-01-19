@@ -1,10 +1,9 @@
 import React from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 
-import * as styles from './styles.css'
-
+import * as styles from '#shared/styles/pages/postDetail/styles.css'
 import MDXComponents from '#components/shared/MDX'
-import PostSEO from '#components/shared/SEO/POSEO'
+import PostSEO from '#components/shared/SEO/PostSEO'
 import { Post, Slug } from '#types/post'
 import { getAllPosts, getPost } from '#utils/posts'
 
