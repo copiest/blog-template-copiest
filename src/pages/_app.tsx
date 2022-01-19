@@ -4,9 +4,8 @@ import Head from 'next/head'
 import { useRouter } from 'next/dist/client/router'
 import { RecoilRoot } from 'recoil'
 
-import * as styles from './styles.css'
-
 import '#shared/globalStyles.css.ts'
+import * as styles from '#shared/styles/pages/posts/styles.css'
 import Header from '#components/header'
 import Layout from '#components/layout'
 import Footer from '#components/footer'
