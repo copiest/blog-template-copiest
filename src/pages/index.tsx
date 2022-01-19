@@ -4,7 +4,7 @@ import config from 'config'
 
 import * as styles from './styles.css'
 
-import PageSEO from '#components/shared/SEO/PageSEO'
+import PageSEO from '#components/shared/SEO/PASEO'
 import Card from '#components/card'
 import { Post } from '#types/post'
 import { getAllPosts } from '#utils/posts'
