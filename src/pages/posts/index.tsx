@@ -5,8 +5,7 @@ import { InView } from 'react-intersection-observer'
 import { useSetRecoilState, useRecoilValue } from 'recoil'
 import config from 'config'
 
-import * as styles from '../styles.css'
-
+import * as styles from '#shared/styles/pages/posts/styles.css'
 import PageSEO from '#components/shared/SEO/PageSEO'
 import Card from '#components/card'
 import { hasNextPostsPageState, allPostsState, pageState, currentPostsState } from '#store/posts'
