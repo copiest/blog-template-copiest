@@ -1,7 +1,6 @@
 import config from 'config'
 
-import * as styles from './styles.css'
-
+import * as styles from '#shared/styles/pages/about/styles.css'
 import PageSEO from '#components/shared/SEO/PageSEO'
 import SocialIcon from '#components/icons'
 
