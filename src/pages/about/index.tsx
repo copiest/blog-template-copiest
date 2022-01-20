@@ -2,7 +2,7 @@ import config from 'config'
 
 import * as styles from './styles.css'
 
-import PageSEO from '#components/shared/SEO/WHY'
+import PageSEO from '#components/shared/SEO/PageSEO'
 import SocialIcon from '#components/icons'
 
 function About() {
