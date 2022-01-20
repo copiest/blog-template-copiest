@@ -4,12 +4,12 @@ import { getMDXComponent } from 'mdx-bundler/client'
 import * as styles from './styles.css'
 
 import MDXComponents from '#components/shared/MDX'
-import PostSEO from '#components/shared/SEO/PostSEO'
+import PostSEO from '#components/shared/SEO/WHAT'
 import { Post, Slug } from '#types/post'
 import { getAllPosts, getPost } from '#utils/posts'
 
 function PostDetail({ post, code }: { post: Post; code: string }) {
-  const { title, date, description, tags } = post.frontMatter
+  const { title, date, description, tags, thumbnailImg } = post.frontMatter
   const Component = React.useMemo(() => getMDXComponent(code), [code])
 
   return (
@@ -18,6 +18,7 @@ function PostDetail({ post, code }: { post: Post; code: string }) {
         seo={{
           title,
           description,
+          thumbnailImg,
           tags,
         }}
       />
