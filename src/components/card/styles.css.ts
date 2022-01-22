@@ -16,7 +16,7 @@ export const imageContainer = style([
   }),
   {
     minWidth: '160px',
-    height: '130px',
+    height: '133px',
     marginRight: theme.space.xlarge,
   },
 ])
@@ -51,6 +51,7 @@ export const title = style([
   {
     fontWeight: theme.fontWeight.bold,
     color: theme.colors.domain.card.title,
+    lineHeight: '1.04',
   },
   twoLineEllipsis,
 ])
